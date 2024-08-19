@@ -37,7 +37,7 @@ a secret in your pipeline.
 repositories {
     maven {
         name = "GitHubPackages"
-        url = uri("https://maven.pkg.github.com/bitfist/particle")
+        url = uri("https://maven.pkg.github.com/bitfist/particle-spring-boot-starter")
         credentials {
             username = project.findProperty("GPR_USER") as String? ?: System.getenv("GITHUB_ACTOR")
             password = project.findProperty("GPR_KEY") as String? ?: System.getenv("GPR_KEY")
