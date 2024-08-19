@@ -3,6 +3,9 @@ on:
   push:
     branches: [ "release" ]
 
+env:
+  GPR_KEY: ${{ secrets.GPR_KEY }}
+
 jobs:
   release:
     runs-on: ubuntu-latest
