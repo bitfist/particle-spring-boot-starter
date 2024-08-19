@@ -1,0 +1,3 @@
+io.github.bitfist.particle.spring.function.java.BrowserMappingAutoConfiguration
+io.github.bitfist.particle.spring.function.javascript.JavaScriptFileAutoConfiguration
+io.github.bitfist.particle.spring.window.ParticleWindowAutoConfiguration
