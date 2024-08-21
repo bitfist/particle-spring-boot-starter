@@ -17,6 +17,10 @@ dependencies {
     testImplementation("org.mockito:mockito-core:5.12.0")
 }
 
+tasks.withType<JavaCompile> {
+    options.compilerArgs.add("-parameters")
+}
+
 tasks.test {
     useJUnitPlatform()
     finalizedBy(tasks.jacocoTestReport)
