@@ -1,41 +1,51 @@
 package io.github.bitfist.particle.spring.window;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.lang.Nullable;
 
 @ConfigurationProperties("particle.window")
 public class ParticleWindowProperties {
 
+    private final String title;
     @Nullable
-    private String title = null;
+    private final String iconUrl;
     @Nullable
-    private String iconURL = null;
+    private final Integer minimumWidth;
     @Nullable
-    private Integer minimumWidth = null;
+    private final Integer minimumHeight;
     @Nullable
-    private Integer minimumHeight = null;
+    private final Integer maximumWidth;
     @Nullable
-    private Integer maximumWidth = null;
-    @Nullable
-    private Integer maximumHeight = null;
-    private boolean maximized = false;
+    private final Integer maximumHeight ;
+    private final boolean maximized;
+
+    public ParticleWindowProperties(
+            @Value("${particle.window.title}") String title,
+            @Value("${particle.window.icon-url}") @Nullable String iconUrl,
+            @Value("${particle.window.minimum-width}") @Nullable Integer minimumWidth,
+            @Value("${particle.window.minimum-height}") @Nullable Integer minimumHeight,
+            @Value("${particle.window.maximum-width}")@Nullable Integer maximumWidth,
+            @Value("${particle.window.maximum-height}") @Nullable Integer maximumHeight,
+            @Value("${particle.window.maximized}") boolean maximized
+    ) {
+        this.title = title;
+        this.iconUrl = iconUrl;
+        this.minimumWidth = minimumWidth;
+        this.minimumHeight = minimumHeight;
+        this.maximumWidth = maximumWidth;
+        this.maximumHeight = maximumHeight;
+        this.maximized = maximized;
+    }
 
     @Nullable
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     @Nullable
-    public String getIconURL() {
-        return iconURL;
-    }
-
-    public void setIconURL(String iconURL) {
-        this.iconURL = iconURL;
+    public String getIconUrl() {
+        return iconUrl;
     }
 
     @Nullable
@@ -43,17 +53,9 @@ public class ParticleWindowProperties {
         return minimumWidth;
     }
 
-    public void setMinimumWidth(Integer minimumWidth) {
-        this.minimumWidth = minimumWidth;
-    }
-
     @Nullable
     public Integer getMinimumHeight() {
         return minimumHeight;
-    }
-
-    public void setMinimumHeight(Integer minimumHeight) {
-        this.minimumHeight = minimumHeight;
     }
 
     @Nullable
@@ -61,24 +63,13 @@ public class ParticleWindowProperties {
         return maximumWidth;
     }
 
-    public void setMaximumWidth(Integer maximumWidth) {
-        this.maximumWidth = maximumWidth;
-    }
-
     @Nullable
     public Integer getMaximumHeight() {
         return maximumHeight;
-    }
-
-    public void setMaximumHeight(Integer maximumHeight) {
-        this.maximumHeight = maximumHeight;
     }
 
     public boolean isMaximized() {
         return maximized;
     }
 
-    public void setMaximized(boolean maximized) {
-        this.maximized = maximized;
-    }
 }
