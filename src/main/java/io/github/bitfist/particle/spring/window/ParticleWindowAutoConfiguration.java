@@ -27,16 +27,16 @@ public class ParticleWindowAutoConfiguration {
         return new ObjectMapper();
     }
 
-    @Bean
+    @Bean(destroyMethod = "")
     @ConditionalOnMissingBean
     Display display() {
         return new Display();
     }
 
-    @Bean
+    @Bean(destroyMethod = "")
     @ConditionalOnMissingBean
     Shell shell(Display display, ParticleWindowProperties properties) {
-        Shell shell = new Shell(display);
+        var shell = new Shell(display);
 
         if (properties.getMinimumWidth() != null && properties.getMinimumHeight() != null) {
             shell.setMinimumSize(properties.getMinimumWidth(), properties.getMinimumHeight());
@@ -50,11 +50,13 @@ public class ParticleWindowAutoConfiguration {
             shell.setText(properties.getTitle());
         }
 
-        if (properties.getIconURL() != null) {
-            shell.setImage(new Image(
-                    display,
-                    ParticleWindowAutoConfiguration.class.getResourceAsStream(properties.getIconURL())
-            ));
+        if (properties.getIconUrl() != null) {
+            shell.setImage(
+                    new Image(
+                            display,
+                            ParticleWindowAutoConfiguration.class.getResourceAsStream(properties.getIconUrl())
+                    )
+            );
         }
 
         shell.setMaximized(properties.isMaximized());
