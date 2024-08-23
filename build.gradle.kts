@@ -15,7 +15,7 @@ configurations {
 dependencies {
 	api("io.github.bitfist:particle:0.1.3")
 
-	val springBootVersion = "3.3.2"
+	val springBootVersion = "3.3.3"
 	implementation(platform("org.springframework.boot:spring-boot-dependencies:$springBootVersion"))
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor:$springBootVersion")
 	implementation("org.springframework.boot:spring-boot-starter")
