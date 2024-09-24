@@ -1,5 +1,6 @@
 plugins {
     id("buildlogic.java-library-conventions")
+    id("buildlogic.version-conventions")
     id("maven-publish")
 }
 
