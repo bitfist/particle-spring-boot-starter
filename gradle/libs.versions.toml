@@ -3,7 +3,7 @@ springBoot = "3.3.4"
 swt = "3.126.0"
 
 [libraries]
-particle = { module = "io.github.bitfist:particle", version = "0.1.3" }
+particle = { module = "io.github.bitfist:particle", version = "0.1.4" }
 springBootPlatform = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "springBoot" }
 springBootConfigurationProcessor = { module = "org.springframework.boot:spring-boot-configuration-processor", version.ref = "springBoot" }
 # Test
