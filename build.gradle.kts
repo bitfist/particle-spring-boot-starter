@@ -12,11 +12,10 @@ configurations {
 }
 
 dependencies {
-	api("io.github.bitfist:particle:0.1.3")
+	api(libs.particle)
 
-	val springBootVersion = "3.3.4"
-	implementation(platform("org.springframework.boot:spring-boot-dependencies:$springBootVersion"))
-	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor:$springBootVersion")
+	implementation(platform(libs.springBootPlatform))
+	annotationProcessor(libs.springBootConfigurationProcessor)
 	implementation("org.springframework.boot:spring-boot-starter")
 	implementation("com.fasterxml.jackson.core:jackson-databind")
 

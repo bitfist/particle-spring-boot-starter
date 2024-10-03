@@ -9,5 +9,6 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.jmongard:git-semver-plugin:0.12.10")
+    implementation(files(libs.javaClass.superclass.protectionDomain.codeSource.location)) // load TOML
+    implementation(libs.semanticVersioning)
 }
