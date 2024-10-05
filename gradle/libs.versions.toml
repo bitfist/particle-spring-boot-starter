@@ -1,6 +1,6 @@
 [versions]
 springBoot = "3.3.4"
-swt = "3.126.0"
+swt = "3.127.0"
 
 [libraries]
 particle = { module = "io.github.bitfist:particle", version = "0.1.4" }
