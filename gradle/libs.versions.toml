@@ -1,5 +1,5 @@
 [versions]
-springBoot = "3.3.5"
+springBoot = "3.4.0"
 swt = "3.127.0"
 
 [libraries]
